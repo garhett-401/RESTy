@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/garhett-401/RESTy",
+  "homepage": "https://garhett-401.github.io/RESTy",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
