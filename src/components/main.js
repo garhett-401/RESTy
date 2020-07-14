@@ -9,8 +9,9 @@ class Main extends React.Component {
     box.style.borderColor = event.target.value;
   };
 
-
+  
   render() {
+    console.log(this.props)
     return (
       <section>
         <section class="main">
@@ -21,7 +22,7 @@ class Main extends React.Component {
             <br></br>
             <section class="methods">
               <ul>
-                <li onClick={() => this.props.handleMethod('Get')} id="get">GET</li>
+                <li onClick={() => this.props.handleMethod('GET')} id="get">GET</li>
                 <li onClick={() => this.props.handleMethod('POST')} id="post">POST</li>
                 <li onClick={() => this.props.handleMethod('PUT')} id="put">PUT</li>
                 <li onClick={() => this.props.handleMethod('DELETE')} id="delete">DELETE</li>
