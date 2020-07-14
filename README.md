@@ -34,4 +34,3 @@ no uml will submit later if needed..
   -Make sure gh-pages is installed
 
 -getting an access token from github
- -test token:7b86df3b3b99ece3036990a47074b350ac34cccb
