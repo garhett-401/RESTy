@@ -1,7 +1,13 @@
 import React from 'react';
-import './main.scss'
+import '../scss/main.scss'
+
 
 class Main extends React.Component {
+  
+  colorPicker(event) {
+    let box = document.getElementsById('update')
+    box.style.borderColor = event.target.value;
+  };
 
 
   render() {
@@ -11,20 +17,20 @@ class Main extends React.Component {
           <form class="form" onSubmit={this.props.handleSubmit}>
             <label>URL:</label>
             <input type="text" id="url" placeholder="URL" value={this.props.value} onChange={this.props.handleChange}></input>
-            <input type="submit" value="GO!"></input>
+            <input id="test" type="submit" value="GO!"></input>
             <br></br>
             <section class="methods">
               <ul>
-                <li onClick={() => this.props.handleMethod('Get')}>GET</li>
-                <li onClick={() => this.props.handleMethod('POST')}>POST</li>
-                <li onClick={() => this.props.handleMethod('PUT')}>PUT</li>
-                <li onClick={() => this.props.handleMethod('DELETE')}>DELETE</li>
+                <li onClick={() => this.props.handleMethod('Get')} id="get">GET</li>
+                <li onClick={() => this.props.handleMethod('POST')} id="post">POST</li>
+                <li onClick={() => this.props.handleMethod('PUT')} id="put">PUT</li>
+                <li onClick={() => this.props.handleMethod('DELETE')} id="delete">DELETE</li>
               </ul>
             </section>
           </form>
         </section>
         <section class="urlSection">
-          <p class="update">
+          <p id="update">
             {this.props.method} {this.props.value}
           </p>
         </section>
