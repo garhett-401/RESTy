@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <section class="footer">
         <h3>
-          &copy; 2018 Code Fellows
+          &copy; 2018 Garhett Morgan
         </h3>
       </section>
     );
