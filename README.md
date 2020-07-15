@@ -27,3 +27,10 @@ no tests for this yet
 #### UML
 
 no uml will submit later if needed..
+
+##### Notes from tuesday...
+
+-adding a deploy and predeploy script to package.json
+  -Make sure gh-pages is installed
+
+-getting an access token from github

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should do something with stuff renders correctly 1`] = `
+<div>
+  <section
+    class="header"
+  >
+    <h1>
+      RESTy
+    </h1>
+  </section>
+  <section>
+    <section
+      class="main"
+    >
+      <form
+        class="form"
+        onSubmit={[Function]}
+      >
+        <label>
+          URL:
+        </label>
+        <input
+          id="url"
+          onChange={[Function]}
+          placeholder="URL"
+          type="text"
+          value=""
+        />
+        <input
+          id="test"
+          type="submit"
+          value="GO!"
+        />
+        <br />
+        <section
+          class="methods"
+        >
+          <ul>
+            <li
+              id="get"
+              onClick={[Function]}
+            >
+              GET
+            </li>
+            <li
+              id="post"
+              onClick={[Function]}
+            >
+              POST
+            </li>
+            <li
+              id="put"
+              onClick={[Function]}
+            >
+              PUT
+            </li>
+            <li
+              id="delete"
+              onClick={[Function]}
+            >
+              DELETE
+            </li>
+          </ul>
+        </section>
+      </form>
+    </section>
+    <section
+      class="urlSection"
+    >
+      <p
+        id="update"
+      >
+        
+         
+        
+      </p>
+    </section>
+  </section>
+  <section
+    class="footer"
+  >
+    <h3>
+      © 2018 Code Fellows
+    </h3>
+  </section>
+</div>
+`;
