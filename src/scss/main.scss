@@ -3,27 +3,45 @@
   display: grid;
   margin-top: 15px;
   padding-top: 15px;
+} 
 
-  form {
+.form {
     justify-self: center;
   }
 
-} 
-
 .methods {
-  justify-items: center;
+  justify-self: center;
   align-content: center;
-  display: inline;
 
   li {
-    padding: 30px;
+    justify-self: center;
+    padding: 15px;
+    background-color: deepskyblue;
+    margin: 15px;
     display: inline;
     list-style: none;
+    border-style: solid;
+    border-color: red($color: #000000);
   }
 }
 .urlSection {
-  height: 300px;
+  height: fit-content;
+  width: 550px;
+  padding: 10px;
+  background-color: rgb(197, 232, 253);
+  border-style: dotted;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displayBox {
+  margin: auto;
+  justify-self: center;
+  height: fit-content;
+  width: 550px;
   padding: 10px;
   background-color: rgb(197, 232, 253);
   border-style: dotted;
 }
+

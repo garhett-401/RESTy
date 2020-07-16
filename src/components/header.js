@@ -5,7 +5,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <section class="header">
+      <section className="header">
         <h1>
           RESTy
         </h1>
