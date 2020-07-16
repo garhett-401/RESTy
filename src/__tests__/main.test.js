@@ -20,7 +20,7 @@ describe('Should do something with stuff', () => {
   it('update date on click', () => {
 
     
-    const wrapper = mount(<App />);
+    const wrapper = mount(<Main />);
     const testClick = wrapper.find('#get')
     testClick.simulate('click');
     expect(wrapper.state('method')).toEqual('GET')
