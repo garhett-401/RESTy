@@ -26,8 +26,8 @@ describe('Should do something with stuff', () => {
     expect(wrapper.state('method')).toEqual('GET')
   })
 
-  it('renders correctly', () => {
-    const DOM = renderer.create(<App/>).toJSON();
-    expect(DOM).toMatchSnapshot();
-  })
+  // it('renders correctly', () => {
+  //   const DOM = renderer.create(<App/>).toJSON();
+  //   expect(DOM).toMatchSnapshot();
+  // })
 })
