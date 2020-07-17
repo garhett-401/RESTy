@@ -9,6 +9,7 @@ class Header extends React.Component {
         <h1>
           RESTy
         </h1>
+        <br/>
       </section>
     );
   }

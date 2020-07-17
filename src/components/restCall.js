@@ -6,20 +6,20 @@ class Engage extends React.Component  {
   render()  {
 
     return (
-      <section>
+      <>
         <br/>
         <br/>
-        <section class="urlSection">
-          <p id="update">
-            {this.props.method} {this.props.value}
-          </p>
-          <br/>
-          <br/>
-          <Display
-          object = {this.props.object}
-          />
-        </section>
-      </section>
+
+        <p id="update">
+          {this.props.method} {this.props.value}
+        </p>
+        <br/>
+        <br/>
+        <Display
+        shortHistory={this.props.shortHistory}
+        />
+       
+      </>
     )
   }
 }

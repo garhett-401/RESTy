@@ -2,7 +2,7 @@ import React from 'react';
 
 const Display = (props) => {
 
-  if(!Object.keys(props.object).length)  {
+  if(!Object.keys(props.shortHistory.object).length)  {
 
     return (
       <p>GIMME SOME GOD DAMN POKEMON</p>
@@ -10,13 +10,24 @@ const Display = (props) => {
   } else  {
 
   return(
-    <section>             
+    <>       
         <pre>
+          <h5>
+            Headers
+          </h5>
           <code>
-            {props.object}
+            {props.shortHistory.headers}
+          </code>
+        </pre>      
+        <pre>
+          <h5>
+            Body
+          </h5>
+          <code>
+            {props.shortHistory.object}
           </code>  
         </pre>   
-    </section>
+    </>
     ) 
   }
 }

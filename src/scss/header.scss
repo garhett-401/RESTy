@@ -1,11 +1,23 @@
 .header {
+  display: flex;
   background-color: black;
-  height: 100px;
+  height: auto;
   display: grid;
 
   h1 {
     justify-self: center;
     color: white;
     font-size: xx-large;
+  }
+
+  nav {
+    justify-self: center;
+    align-items: center;
+
+    .select {
+      justify-self: center;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 }

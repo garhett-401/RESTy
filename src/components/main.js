@@ -1,6 +1,7 @@
 import React from 'react';
 import '../scss/main.scss'
-import Engage from './restCall.js'
+import Resty from './resty.js'
+
 
 class Main extends React.Component {
   constructor() {
@@ -9,14 +10,38 @@ class Main extends React.Component {
     this.state = {
       value: '',
       method: 'GET',
-      object: '',
+      history: [],
+      shortHistory: {
+        status: 500,
+        method: '',
+        url: '',
+        headers: '',
+        object: '',
+      }
     }
 
-    // we must bind methods (not defined with fat arrow functions to the React.Components "this")
+    this.handleHistory = this.handleHistory.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMethod = this.handleMethod.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleObjectChange = this.handleObjectChange.bind(this)
+    this.handleSaveStorage = this.handleSaveStorage.bind(this)
+  }
+
+  async handleSaveStorage() {
+    localStorage.setItem('archive', JSON.stringify(this.state.history))
+  }
+
+  handleHistory(data, apiData) {
+    let info = {
+      status: data.status,
+      method: this.state.method,
+      url: data.url,
+      headers: data.headers,
+      object: apiData,
+    }
+    this.setState({ shortHistory: info })
+    this.setState({ history: this.state.history.concat(this.state.shortHistory) })
+    this.handleSaveStorage()
   }
 
   handleChange(event) {
@@ -32,7 +57,7 @@ class Main extends React.Component {
         let data = await fetch(`${api}`);
         let json = await data.json();
         let apiData = JSON.stringify(json, null, 2)
-        this.handleObjectChange(apiData)
+        this.handleHistory(data, apiData)
         break;
 
       case 'POST':
@@ -51,48 +76,21 @@ class Main extends React.Component {
     this.setState({ method })
   }
 
-  handleObjectChange(objectInput) {
-    this.setState({ object: objectInput })
-  }
-
   render() {
 
     return (
-      <section class="main">
-        <section class="form">
-          <form class="formField" onSubmit={this.handleSubmit}>
-            <label>URL:</label>
-            <input type="text" id="url" placeholder="URL" value={this.value} onChange={this.handleChange}></input>
-            <button type="submit">GO!</button>
-          </form>
-        </section>
 
-        <br />
-        <br />
-
-        <section class="methods">
-          <ul>
-            <li onClick={() => this.handleMethod('GET')} id="get">GET</li>
-            <li onClick={() => this.handleMethod('POST')} id="post">POST</li>
-            <li onClick={() => this.handleMethod('PUT')} id="put">PUT</li>
-            <li onClick={() => this.handleMethod('DELETE')} id="delete">DELETE</li>
-          </ul>
-        </section>
-        
-        <br />
-        <br />
-
-        <section id="displayBox">
-          <Engage
-            method={this.state.method}
+          <Resty
             value={this.state.value}
+            method={this.state.method}
+            history={this.state.history}
+            shortHistory={this.state.shortHistory}
+            handleChange={this.handleChange}
+            handleHistory={this.handleHistory}
+            handleMethod={this.handleMethod}
             handleSubmit={this.handleSubmit}
-            handleChange={this.handleObjectChange}
-            object={this.state.object}
+            handleSaveStorage={this.handleSaveStorage}
           />
-        </section>
-        
-      </section>
     )
   }
 }
