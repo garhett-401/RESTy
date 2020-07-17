@@ -1,8 +1,12 @@
-.main {
 
+
+.main {
+  width: 900px;
   display: grid;
   margin-top: 15px;
   padding-top: 15px;
+
+  grid-template-columns: 0fr, 1fr, 3fr, 0fr;
 } 
 
 .form {
@@ -30,20 +34,38 @@
 }
 .urlSection {
   height: fit-content;
-  width: 550px;
-  padding: 10px;
+  width: 700px;
   background-color: rgb(197, 232, 253);
   border-style: dotted;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+
+  pre {
+    width: 100%;
+    padding: 15px;
+  }
 }
 
 .displayBox {
   margin: auto;
+  margin-bottom: 10px;
   justify-self: center;
   height: fit-content;
-  width: 550px;
-  padding: 10px;
-  background-color: rgb(197, 232, 253);
-  border-style: dotted;
+  width: 900px;
+  display: inline-flex;
+}
+
+.recentRequests {
+  background-color: lightcyan;
+  width: 200px;
+  overflow: scroll;
+
+  ul {
+    padding: 0px;
+    list-style: none;
+    width: fit-content;
+  }
 }
 
